@@ -103,6 +103,21 @@ var ajax=function(url,callback)
 
 
 //Beautify and number-formatting adapted from the Frozen Cookies add-on (http://cookieclicker.wikia.com/wiki/Frozen_Cookies_%28JavaScript_Add-on%29)
+function fixednum(val,decimals)
+{
+        valString=""
+	if (val<=Math.pow(2,53))
+	{
+		valString=val.toPrecision(100)
+		valString=valString.split(".")[0]
+	} else {
+		valString=val.toFixed(decimals)
+		// idk what to do
+		// decimals must be <= 100
+	       }
+        }
+	return valString
+}	
 function formatEveryThirdPower(notations)
 {
 	return function (value)
@@ -161,11 +176,11 @@ function Beautify(value,floats)
 	var negative=(value<0);
 	var decimal='';
 	var fixed=value.toFixed(floats);
-	if (Math.abs(value)<1000 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixed.toString()).split('.')[1];
+	if (Math.abs(value)<1000 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixed.toFixed(2)).split('.')[1];
 	value=Math.floor(Math.abs(value));
 	if (floats>0 && fixed==value+1) value++;
 	var formatter=numberFormatters[Game.prefs.format?2:1];
-	var output=formatter(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+	var output=fixednum(formatter(value,floats)).replace(/\B(?=(\d{3})+(?!\d))/g,',');
 	if (output=='0') negative=false;
 	return negative?'-'+output:output+decimal;
 }
