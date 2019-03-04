@@ -181,7 +181,7 @@ function Beautify(value,floats)
 	var negative=(value<0);
 	var decimal='';
 	var fixed=fixednum(value,floats);
-	if (Math.abs(value)<9007199254740992 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixednum(value,2)).split('.')[1];
+	if (Math.abs(value)<9007199254740992 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(value.toFixed(2)).split('.')[1];
 	value=Math.floor(Math.abs(value));
 	if (floats>0 && fixed==value+1) value++;
 	var formatter=numberFormatters[Game.prefs.format?2:1];
