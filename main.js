@@ -169,7 +169,7 @@ function fixednum(val,places)
 	} else {
 		if (val%1!=0)
 		{
-			valString=val.toFixed(decimals)
+			valString=val.toFixed(places)
 		} else {
 			valString=val.toFixed(0)
 		}
