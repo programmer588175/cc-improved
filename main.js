@@ -156,23 +156,23 @@ var numberFormatters =
 	formatEveryThirdPower(formatLong),
 	rawFormatter
 ];
-function fixednum(val,places)
+function fixednum(val,decimals)
 {
 	valString="";
-	if (val>=1e+21);
+	if (val>=1e21);
 	{
 		valString=val.toPrecision(100);
-	        if (val<=1e+100);
+	        if (val<=1e100);
 		{
 			valString=valString.split(".")[0];
 		}
 	} else {
 		if (val%1!=0);
 		{
-			valString=val.toFixed(places);
+			valString=val.toFixed(decimals);
 		} else {
 			valString=val.toFixed(0);
-		}
+		       }
 	}
 	return valString
 
@@ -185,7 +185,7 @@ function Beautify(value,floats)
 	value=Math.floor(Math.abs(value));
 	if (floats>0 && fixed==value+1) value++;
 	var formatter=numberFormatters[Game.prefs.format?2:1];
-	var output=fixednum(formatter(value),floats).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+	var output=fixednum(formatter(value),0).replace(/\B(?=(\d{3})+(?!\d))/g,',');
 	if (output=='0') negative=false;
 	return negative?'-'+output:output+decimal;
 }
