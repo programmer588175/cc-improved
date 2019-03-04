@@ -156,16 +156,34 @@ var numberFormatters =
 	formatEveryThirdPower(formatLong),
 	rawFormatter
 ];
+function fixednum(val,places)
+{
+	valString=""
+	if (val>=1e+21)
+	{
+		valString=val.toPrecision(100)
+	        if (val<=1e+100)
+		{
+			valString=valString.split(".")[0]
+		}
+	} else {
+		if (val%1!=0)
+		{
+			valString=val.toFixed(decimals)
+		} else {
+			valString=val.toFixed(0)
+		}
+	}
 function Beautify(value,floats)
 {
 	var negative=(value<0);
 	var decimal='';
-	var fixed=value.toFixed(floats);
-	if (Math.abs(value)<1000 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixed.toString()).split('.')[1];
+	var fixed=fixednum(value,floats);
+	if (Math.abs(value)<9007199254740992 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixednum(value,2)).split('.')[1];
 	value=Math.floor(Math.abs(value));
 	if (floats>0 && fixed==value+1) value++;
 	var formatter=numberFormatters[Game.prefs.format?2:1];
-	var output=formatter(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+	var output=fixednum(formatter(value)).replace(/\B(?=(\d{3})+(?!\d))/g,',');
 	if (output=='0') negative=false;
 	return negative?'-'+output:output+decimal;
 }
