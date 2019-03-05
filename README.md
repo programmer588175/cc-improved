@@ -5,7 +5,7 @@ This is not the new 2.018 beta, this is the v2.016 version!
 # Versions
 0.1: added, with fixed number function (shows "exact" values) (March 4, 2019)
 # To Do
-Fix the page not loading. (done)
+Fix the page not loading.
 
 Fix short numbers not working.
 
