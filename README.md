@@ -8,5 +8,3 @@ This is not the new 2.018 beta, this is the v2.016 version!
 Fix the page not loading.
 
 Fix short numbers not working.
-
-Fix fixed numbers not working (I put in 10^30 and instead of showing a full number, it showed "1e+30" which I don't want)
