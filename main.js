@@ -7865,6 +7865,7 @@ Game.Launch=function()
 			10:{name:'Mooncandy',unlock:350,achievUnlock:450,iconRow:19,color:'#7e7ab9',price:			500000000000000000000},
 			11:{name:'Astrofudge',unlock:400,achievUnlock:500,iconRow:28,color:'#9a3316',price:			5000000000000000000000000},
 			12:{name:'Alabascream',unlock:450,achievUnlock:550,iconRow:30,color:'#c1a88c',price:		50000000000000000000000000000},
+			//13:{name:'Absolutecream',unlock:500,achievUnlock:600,iconRow:10,color:'#c1a88c',price:		5000000000000000000000000000000},
 			'synergy1':{name:'Synergy I',unlock:15,iconRow:20,color:'#008595',special:1,req:'Synergies Vol. I',price:			200000},
 			'synergy2':{name:'Synergy II',unlock:75,iconRow:29,color:'#008595',special:1,req:'Synergies Vol. II',price:			200000000000},
 		};
@@ -10247,6 +10248,8 @@ Game.Launch=function()
 		order=1900;Game.TieredAchievement('Downsizing','Have <b>400</b> antimatter condensers.','Antimatter condenser',9);//the trailer got me really hyped up but i've read some pretty bad reviews. is it watchable ? is it worth seeing ? i don't mind matt damon
 		order=2000;Game.TieredAchievement('My eyes','Have <b>400</b> prisms.','Prism',9);
 		order=2100;Game.TieredAchievement('Maybe a chance in hell, actually','Have <b>400</b> chancemakers.','Chancemaker',9);
+		//order=2110;Game.TieredAchievement('Randomly cool','Have <b>600</b> chancemakers.','Chancemaker',13);
+		//order=2120;Game.TieredAchievement('Cookie turn!','Have <b>600</b> fractal engines.','Fractal engine',13);
 		
 		order=1200;Game.TieredAchievement('Make like a tree','Have <b>450</b> farms.','Farm',10);
 		order=1300;Game.TieredAchievement('Cave story','Have <b>450</b> mines.','Mine',10);
