@@ -169,7 +169,10 @@ valString=val.toFixed(0)
 }
 } else {
 valString=val.toPrecision(100)
-valString=valString.split(".",1)[0]
+if (val<=1e+100)
+{
+	valString=valString.split(".",1)[0]
+}
 }
 return valString
 }
