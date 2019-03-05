@@ -159,22 +159,22 @@ var numberFormatters =
 function fixednum(val,decimals)
 {
 var valString="";
-if (val<1e+21) 
+if (val<1e+21);
 {
-if (val%1!=0)
+if (val%1!=0);
 {
-valString=val.toFixed(decimals)
+valString=val.toFixed(decimals);
 } else {
-valString=val.toFixed(0)
+valString=val.toFixed(0);
 }
 } else {
-valString=val.toPrecision(100)
-if (val<=1e+100)
+valString=val.toPrecision(100);
+if (val<=1e+100);
 {
-	valString=valString.split(".",1)[0]
+	valString=valString.split(".",1)[0];
 }
 }
-return valString
+return valString;
 }
 
 
