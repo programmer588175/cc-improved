@@ -7,7 +7,7 @@ This is not the new 2.018 beta, this is v2.016
 
 0.1.1: Lucky digit/number/payout fix, levels must be divisible by the value (I did this so that you can get the upgrade past 9 quadrillion) (March 5, 2019)
 # To Do
-Fix the page not loading. (done for now)
+Fix the page not loading. WHY IS THIS UNPLAYABLE 90% OF THE TIME?
 
 Fix short numbers not working.
 
