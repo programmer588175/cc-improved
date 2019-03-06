@@ -9,6 +9,4 @@ This is not the new 2.018 version, this is v2.016
 # To Do
 Fix the page not loading. WHY IS THIS UNPLAYABLE 90% OF THE TIME?
 
-Fix short numbers not working.
-
 Fix the "fixednum" function not working, scientific notation is still there (I have a file with 13 Sextillion cookies and it still shows 1.3e+22)
