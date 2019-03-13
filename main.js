@@ -8,7 +8,7 @@ http://orteil.dashnet.org
 */
 
 var VERSION=2.016;
-var BETA=1;
+var BETA=1; // used a repository that uses the beta
 
 
 /*=====================================================================================
