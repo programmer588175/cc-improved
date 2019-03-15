@@ -3,7 +3,7 @@ An improved version of Cookie Clicker v2.016 beta. Credit to Orteil for the orig
 # NOTE
 This is not the new 2.018 version, this is v2.016
 # Versions
-0.1: added, with fixed number function (shows "exact" values) (March 4, 2019)
+0.1: added, with fixed number function that doesn't work (if it worked, it would show "exact" values) (March 4, 2019)
 
 0.1.1: Lucky digit/number/payout fix, prestige levels must be divisible by the value instead of ending in it. (I did this so that you can get the upgrade past 9 quadrillion. Numbers cannot end in 7 past 9 quadrillion due to floating point) (March 5, 2019)
 # To Do
