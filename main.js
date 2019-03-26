@@ -13181,24 +13181,6 @@ Game.Launch=function()
 	}
 }
 
-function Beautify(value,floats)
-{
-	if (value>=1e+21)
-	{
-	   return value.toPrecision(17)
-	}
-        else {
-		var negative=(value<0);
-	        var decimal='';
-	        var fixed=value.toFixed(floats);
-	        if (Math.abs(value)<1000 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixed.toString()).split('.')[1];
-	        value=Math.floor(Math.abs(value));
-	        if (floats>0 && fixed==value+1) value++;
-	        var formatter=numberFormatters[Game.prefs.format?2:1];
-	        var output=formatter(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
-	        if (output=='0') negative=false;
-	        return negative?'-'+output:output+decimal;
-}
 	
 /*=====================================================================================
 LAUNCH THIS THING
