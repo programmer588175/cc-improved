@@ -158,16 +158,21 @@ var numberFormatters =
 ];
 function Beautify(value,floats)
 {
-	var negative=(value<0);
-	var decimal='';
-	var fixed=value.toFixed(floats);
-	if (Math.abs(value)<1000 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixed.toString()).split('.')[1];
-	value=Math.floor(Math.abs(value));
-	if (floats>0 && fixed==value+1) value++;
-	var formatter=numberFormatters[Game.prefs.format?2:1];
-	var output=formatter(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
-	if (output=='0') negative=false;
-	return negative?'-'+output:output+decimal;
+	if (value>=1e+21)
+	{
+	   return value.toPrecision(17)
+	}
+        else {
+		var negative=(value<0);
+	        var decimal='';
+	        var fixed=value.toFixed(floats);
+	        if (Math.abs(value)<1000 && floats>0 && Math.floor(fixed)!=fixed) decimal='.'+(fixed.toString()).split('.')[1];
+	        value=Math.floor(Math.abs(value));
+	        if (floats>0 && fixed==value+1) value++;
+	        var formatter=numberFormatters[Game.prefs.format?2:1];
+	        var output=formatter(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+	        if (output=='0') negative=false;
+	        return negative?'-'+output:output+decimal;
 }
 function shortenNumber(value)
 {
@@ -8964,10 +8969,12 @@ Game.Launch=function()
 		new Game.Upgrade('Sucralosia Inutilis','Bifurcated sugar lumps appear <b>5% more often</b> and are <b>5% more likely</b> to drop 2 lumps.<q>A rare berry of uninteresting flavor that is as elusive as its uses are limited; only sought-after by the most avid collectors with too much wealth on their hands.</q>',1000000000,[27,15]);Game.last.pool='prestige';Game.last.parents=['Diabetica Daemonicus'];
 		
 		//note : these showIf functions stop working beyond 10 quadrillion prestige level, due to loss in precision; the solution, of course, is to make sure 10 quadrillion is not an attainable prestige level
-		new Game.Upgrade('Lucky digit','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a bit shy and only appears when your prestige level ends in 7.</q>',777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Heavenly luck'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%10==7);};
-		new Game.Upgrade('Lucky number','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a reclusive hermit and only appears when your prestige level ends in 777.</q>',77777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Lucky digit','Lasting fortune'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000==777);};
-		new Game.Upgrade('Lucky payout','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade took an oath of complete seclusion from the rest of the world and only appears when your prestige level ends in 777777.</q>',77777777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Lucky number','Decisive fate'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000000==777777);};
-		
+		new Game.Upgrade('Lucky digit','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a bit shy and only appears when your prestige level is divisible by 7.</q>',777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Heavenly luck'];//Game.last.showIf=function(){return (Math.ceil(Game.prestige)%10==7);};
+		new Game.Upgrade('Lucky number','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a reclusive hermit and only appears when your prestige level is divisible by 777.</q>',77777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Lucky digit','Lasting fortune'];//Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000==777);};
+		new Game.Upgrade('Lucky payout','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade took an oath of complete seclusion from the rest of the world and only appears when your prestige level is divisible by 777777.</q>',77777777,[24,15]);Game.last.pool='prestige';Game.last.parents=['Lucky number','Decisive fate'];//Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000000==777777);};
+		Game.Upgrades["Lucky number"].showIf=function(){return (Math.ceil(Game.prestige)%777==0);}
+                Game.Upgrades["Lucky digit"].showIf=function(){return (Math.ceil(Game.prestige)%7==0);}
+                Game.Upgrades["Lucky payout"].showIf=function(){return (Math.ceil(Game.prestige)%777777==0);}
 		order=50000;
 		new Game.Upgrade('Background selector','Lets you pick which wallpaper to display.',0,[29,5]);
 		Game.last.descFunc=function(){
