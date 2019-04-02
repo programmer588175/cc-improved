@@ -1,7 +1,7 @@
 # cc-improved
 An improved version of Cookie Clicker v2.016 beta. Credit to Orteil for the original Cookie Clicker. Use the website or extract to play!
 # NOTE
-This is v2.016, not 2.019
+This is v2.016, not 2.019. I used something that is for 2.016. I haven't found anything for 2.018 or 2.019 yet.
 # Changelog
 0.1: Added (March 4, 2019)
 
