@@ -12,3 +12,5 @@ This is not the newest version - this is v2.016
 Done(?): Page is stuck on its loading screen
 
 Done: No commas after decimal point in scientific notation
+
+Two decimal points in the number (where "123,456,789,012,345.67" would be "123,456,789,012,344.98.67" instead, because I always use 2 decimal places, and the Beautify function sometimes adds something strange)
