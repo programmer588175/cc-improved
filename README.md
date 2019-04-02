@@ -7,6 +7,5 @@ This is not the newest version - this is v2.016
 
 0.1.1: Lucky digit/number/payout fix, prestige levels must be divisible by the value instead of ending in it. (I did this so that you can get the upgrade past 9 quadrillion. Numbers cannot end in 7 past 9 quadrillion due to floating point) (March 5, 2019)
 # To Do
-Fix the page not loading. WHY IS THIS UNPLAYABLE 90% OF THE TIME?
-
+Fix the page not loading most of the time.
 Fix the "no commas when scientific notation" (>=10^21) not working.
