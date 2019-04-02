@@ -1,7 +1,7 @@
 # cc-improved
 An improved version of Cookie Clicker v2.016 beta. Credit to Orteil for the original Cookie Clicker. Use the website or extract to play!
 # NOTE
-This is not the new 2.018 version, this is v2.016
+This is not the newest version - this is v2.016
 # Versions
 0.1: Added (March 4, 2019)
 
@@ -9,4 +9,4 @@ This is not the new 2.018 version, this is v2.016
 # To Do
 Fix the page not loading. WHY IS THIS UNPLAYABLE 90% OF THE TIME?
 
-Fix the "no commas when scientific" not working. (I'm new to this!)
+Fix the "no commas when scientific notation" (>=10^21) not working.
